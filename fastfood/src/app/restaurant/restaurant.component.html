@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <app-form-post-of-sell></app-form-post-of-sell>
+        </div>
+        <div class="col-md-6">
+            <app-kitchen (onSave)="onPedidoListo($event)"></app-kitchen>
+        </div>
+        <div class="col-md-3">
+            <app-delivery [pedidosParaEntregar]="pedidosParaEntregar"></app-delivery>
+        </div>
+    </div>
+</div>
+
+
+
+

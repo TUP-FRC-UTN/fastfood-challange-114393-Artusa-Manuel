@@ -1,0 +1,38 @@
+<div class="container">
+    <h2>Cocina</h2>
+    <div class="row">
+      <div class="card col-md-6">
+        <h4>Pedidos para cocinar</h4>
+        @for (pedido of pedidosParaCocinar; track pedido.numero) {
+          <div class="card-body">
+            <h5>Nro Pedido: {{pedido.numero}}</h5>
+            <h6>Nombre Cliente: {{pedido.nombreCliente}}</h6>
+            <p>Descripción: {{pedido.descripcion}}</p>
+            <p>Estado: {{pedido.estado}}</p>
+            <p>Fecha: {{pedido.date | date:'short'}}</p>
+            <button class="btn btn-primary" (click)="cocinarPedido(pedido)">Cocinar</button>
+          </div>
+        }
+        @if (pedidosParaCocinar.length === 0) {
+          <p>No hay pedidos para cocinar en este momento.</p>
+        }
+      </div>
+      
+      <div class="card col-md-6">
+        <h4>Pedidos Cocinando</h4>
+        @for (pedido of pedidosCocinando; track pedido.numero) {
+          <div class="card-body">
+            <h5>Nro Pedido: {{pedido.numero}}</h5>
+            <h6>Nombre Cliente: {{pedido.nombreCliente}}</h6>
+            <p>Descripción: {{pedido.descripcion}}</p>
+            <p>Estado: {{pedido.estado}}</p>
+            <p>Fecha: {{pedido.date | date:'short'}}</p>
+            <button class="btn btn-primary" (click)="terminarCoccion(pedido)">Terminar Cocción</button>
+          </div>
+        }
+        @if (pedidosCocinando.length === 0) {
+          <p>No hay pedidos en cocina en este momento.</p>
+        }
+      </div>
+    </div>
+  </div>

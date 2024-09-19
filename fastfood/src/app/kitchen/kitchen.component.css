@@ -1,0 +1,15 @@
+/* .card{
+    height: 250px;
+    width: 350px;
+    padding: 10px;
+
+    margin: 35px;
+} */
+h2{
+    
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.container{
+    border-left: 4px grey solid;
+    height: 100%;
+}

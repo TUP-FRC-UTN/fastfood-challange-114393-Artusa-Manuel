@@ -1,0 +1,20 @@
+<h2>Registrar Pedido</h2>
+<form #form="ngForm" (ngSubmit)="save(form)">
+    <div class="mb-3">
+      <label for="inputNombreCliente" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="inputNombreCliente" 
+      required
+      name="nombre"
+      #nombre = "ngModel"[(ngModel)]="pedido.nombreCliente">
+           
+    </div>
+    <div class="mb-3">
+      <label for="inputDesc" class="form-label">Descripcion</label>
+      <input type="text" class="form-control" id="inputDesc"
+      required
+      minlength=4
+      name="descripcion"
+      #descripcion = "ngModel" [(ngModel)]="pedido.descripcion">
+    </div>     
+    <button type="submit" class="btn btn-primary">PEDIR</button>
+</form>

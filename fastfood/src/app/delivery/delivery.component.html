@@ -1,0 +1,21 @@
+<div class="container">
+    <h2>DELIVERY</h2>
+<div class="card">
+    
+      @for (pedido of pedidosParaEntregar; track pedido.numero) {
+        <div class="card-body">
+          <h5>Nro Pedido:{{pedido.numero}}</h5>
+          <h6>Nombre Cliente: {{pedido.nombreCliente}}</h6>
+          <h6> Pedido:{{pedido.descripcion}} </h6>
+          <h6>Estado: {{pedido.estado}}</h6>
+          <h6>Fecha : {{pedido.date|date:'short'}}</h6>
+          <button (click)="entregar(pedido)" class="btn btn-outline-success">Entregar</button>
+        </div>
+        
+      }
+      @if (pedidosParaEntregar.length === 0) {
+        <p>No hay pedidos para entregar en este momento.</p>
+      }
+  </div>
+</div>
+
